@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>
+			init info
+		</title>
+	</head>
+	<body>
+		{{ userID }}
+		<br>
+		
+		{{ courseSize }}
+		<br>
+
+		{% for course in courseNums %}
+			{{ course }}
+			<br>
+		{% endfor %}
+
+		{% for beacon in beaconIds %}
+			{{ beacon }}
+			<br>
+		{% endfor %}
+		
+	</body>
+</html>

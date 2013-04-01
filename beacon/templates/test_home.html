@@ -1,0 +1,194 @@
+{% include 'header.html' %}
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#"><span class="fui-location-24" color="white"></span> beacon</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="/register/">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3 pagination-left">
+      <div class="text-center">
+      <!--Sidebar content-->
+      <h2>Hi,  </h2>
+      <p>
+
+   <!-- BUTTON FOR MODAL -->     
+    <a href="#myBeacons" role="button" class="btn btn-large btn-block btn-primary" data-toggle="modal"><span class="fui-location-24" color="white"></span> My Beacons</a>
+ 
+<!-- Modal -->
+<div id="myBeacons" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myBeaconsLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myBeaconsLabel"><span class="fui-location-24" color="white"></span> My Beacons</h3>
+  </div>
+  <div class="modal-body">
+    <h3>Beacons I've created: </h3>
+    <br><h3> Beacons I've joined: </h3>
+    
+  </div>
+  <div class="modal-footer">
+  
+    <button class="btn btn-primary">Close</button>
+  </div>
+</div> <!-- end of modal -->
+
+
+
+
+<!-- button and modal for adding a new course-->
+<a href="#newCourse" role="button" class="btn btn-block btn-primary" data-toggle="modal"><span class="fui-plus-24" color="white"></span> Add New Course</a>
+<!-- Modal -->
+<div id="newCourse" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="newCourseLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="newCourseLabel">Add a Course</h3>
+  </div>
+  <div class="modal-body">
+
+<form align="center">
+  <fieldset>
+    <input type="text" placeholder="Type course, ex: COS 126">
+    <button type="submit" class="btn btn-small">Submit</button>
+  </fieldset>
+</form>
+</div> <!-- /body -->
+  <div class="modal-footer">
+  
+    <button class="btn btn-primary">Close</button>
+  </div>
+</div>
+
+
+
+
+
+<!-- button and modal for adding a new course-->
+<a href="#newBeacon" role="button" class="btn btn-block btn-danger" data-toggle="modal"><span class="fui-plus-24" color="white"></span> Add New Beacon</a><br>
+<!-- Modal -->
+<div id="newBeacon" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="newBeaconLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="newBeaconLabel">Add a Beacon</h3>
+  </div>
+  <div class="modal-body">
+
+<form align="center">
+  <fieldset>
+    <input type="text" placeholder="Where? e.g. McCosh 30"> <br>
+    <input type="text" placeholder="What are you working on?"><br>
+    <input type="text" placeholder="When will you start?">
+    <input type="text" placeholder="When will you end?">
+    <textarea rows="3"></textarea></br>
+    <button type="submit" class="btn btn-small">Submit</button>
+  </fieldset>
+</form>
+</div> <!-- /body -->
+  <div class="modal-footer">
+
+  </div>
+</div>
+
+
+
+</p>
+<div id = "courses" class="btn-group btn-block btn-group-vertical">
+  <button type="button" data-toggle="button" class="btn btn-primary btn-large btn-block ">ORF 309</button>
+  <button type="button" data-toggle="button"class="btn btn-primary btn-large btn-block">PHY 207</button>
+  <button type="button"data-toggle="button" class="btn btn-primary btn-large btn-block">COS 217</button>
+  <button type="button" data-toggle="button"class="btn btn-primary btn-large  btn-block">ECS 301</button>
+  <button type="button" data-toggle="button"class="btn btn-primary btn-link btn-large btn-block">VIS 222</button>
+$("       ").toggle(courseClicked(  ) {  <!-- not sure how to dynamically load things?? -->
+alert("Handler for .click() called.");
+}, courseUnselected() {
+  alert("Second handler for .toggle() called.);
+});
+</div>
+
+
+
+      <!-- load user ids here -->
+      <!-- load course data -->
+</div> <!-- end the sidebar centering -->
+    </div>
+
+
+    <div class="span8 offset1 pagination-centered">
+      <!--Body content-->
+    
+      <h1>Current Beacons</h1>
+      <p>List the current beacons here - collapsible<br>
+      <a href="#" data-toggle="tooltip" title="NEED TO DYNAMICALLY LOAD INFO HERE?">COS 126</a> 
+       </p>
+
+
+<!-- exploring one interface option here
+ -->      <div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        One option: accordion group <br> courseID[0] + where
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        Deliver info about other people going <br>
+        What time it starts<br>
+        The comments <br>
+        <button class="btn btn-mini btn-primary"><span class="fui-location-16" color="white"></span> Join</button>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+        courseID[1] + where 
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        Start: End: <br>
+        getNames 
+                <br><button class="btn btn-mini btn-primary"><span class="fui-location-16" color="white"></span> Join</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+
+      <h2> Upcoming Beacons </h2> <br>
+<button type="button" class="btn btn-link" data-toggle="collapse" data-target="#demo">
+  BEACON 1 @ EQUAD
+</button>
+<div id="demo" class="collapse in"> … </div>
+
+<button type="button" class="btn btn-link" data-toggle="collapse" data-target="#beacon2">
+  Beacon 2
+</button>
+ 
+<div id="beacon2" class="collapse in"> BLERGHH </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+{% include 'footer.html' %}

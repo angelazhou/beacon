@@ -1,0 +1,6 @@
+courseid, where, starting time, endingtime, extra notes, isAdmin (edit), array of names
+
+
+call the body: onLoad, function init
+
+populate with data 

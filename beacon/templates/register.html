@@ -1,0 +1,49 @@
+{% include 'header.html' %}
+{{ state }}
+
+
+<style>
+body{
+				background-image:url('http://i.imgur.com/ALso9Pw.jpg'); 
+
+					font-color:#FFFFFF;
+						}
+								#copy { font-color:#FFFFFF;
+												background-color: #1ABC9C;
+												max-width:35%;
+
+														}
+												</style>
+												<div class="container text-center">
+														<div id="copy">
+										
+												<form action="/register/" method="post">
+									
+														<h1>Register for Beacon</h1>
+														{% csrf_token %}	
+			{% if next %}
+				<input type="hidden" name="next" value="{{ next }}" />
+			{% endif %}
+			
+			username:
+			<input type = "text" name = "username" value = "{{ username }}" />
+			</br>
+
+			password:
+			<input type = "password" name = "password" value = "" />
+			</br>
+
+			Confirm password:
+			<input type = "password" name = "confirm password" value = "" />
+			</br>
+			
+			Email:
+			<input type = "text" name = "email" value = "{{ email }}" />
+			</br>
+
+			<input type = "submit" value = "register" />
+		</form>
+	
+</div>
+
+		{% include 'footer.html' %}

@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>
+			beacon info
+		</title>
+	</head>
+	<body>
+		{{ courseNum }}
+		<br>
+		
+		{{ location }}
+		<br>
+		
+		{{ startTime }}
+		<br>
+		
+		{{ endTime }}
+		<br>
+		
+		{{ comments }}
+		<br>
+		
+		{{ isAdmin }}
+		<br>
+		
+		{% for name in beaconusers %}
+			{{ name }}
+			<br>
+		{% endfor %}
+		<br>
+	</body>
+</html>
