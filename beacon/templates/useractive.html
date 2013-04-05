@@ -24,7 +24,7 @@
     <div class="span3 pagination-left">
       <div class="text-center">
       <!--Sidebar content-->
-      <h2>Hi,  </h2>
+      <h2>Hi, {{ user.username }}</h2>
       <p>
 
    <!-- BUTTON FOR MODAL -->     
@@ -91,8 +91,37 @@
   <fieldset>
     <input type="text" placeholder="Where? e.g. McCosh 30"> <br>
     <input type="text" placeholder="What are you working on?"><br>
-    <input type="text" placeholder="When will you start?">
-    <input type="text" placeholder="When will you end?">
+
+<!-- threw in some JS Bootstrap date/timepicker -->
+<div id="datetimepicker" class="input-append date">
+      <input type="text"></input>
+      <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+      </span>
+    </div>
+    <script type="text/javascript"
+     src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+    </script> 
+    <script type="text/javascript"
+     src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+    </script>
+    <script type="text/javascript">
+      $('#datetimepicker').datetimepicker({
+        format: 'dd/MM/yyyy hh:mm:ss',
+        language: 'pt-BR'
+      });
+    </script>
+    <!-- if this doesn't work, just toss it -->
+
+
+
+
     <textarea rows="3"></textarea></br>
     <button type="submit" class="btn btn-small">Submit</button>
   </fieldset>
@@ -132,43 +161,27 @@
       <a href="#" data-toggle="tooltip" title="NEED TO DYNAMICALLY LOAD INFO HERE?">COS 126</a> 
        </p>
 
-
+{% for beacon in currentBeacons %}
 <!-- exploring one interface option here
  -->      <div class="accordion" id="accordion2">
   <div class="accordion-group">
     <div class="accordion-heading">
       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        One option: accordion group <br> courseID[0] + where
-      </a>
+	 	<h3> {{ beacon.name }} </h3> 
+	  </a>
     </div>
-    <div id="collapseOne" class="accordion-body collapse in">
+    <div id="collapseOne" class="accordion-body collapse out">
       <div class="accordion-inner">
-        Deliver info about other people going <br>
-        What time it starts<br>
-        The comments <br>
+			  	Course name: {{ beacon.name }} <br>
+				Location: {{ beacon.location }} <br>
+				Starting Time: {{ beacon.starttime }} <br>
         <button class="btn btn-mini btn-primary"><span class="fui-location-16" color="white"></span> Join</button>
       </div>
     </div>
   </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        courseID[1] + where 
-      </a>
-    </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
-        Start: End: <br>
-        getNames 
-                <br><button class="btn btn-mini btn-primary"><span class="fui-location-16" color="white"></span> Join</button>
-
-      </div>
-    </div>
-  </div>
-</div>
- 
-
-    
+{% endfor %}
+  
+  
       <h2> Upcoming Beacons </h2> <br>
 <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#demo">
   BEACON 1 @ EQUAD
@@ -187,7 +200,8 @@
     </div>
   </div>
 </div>
-<script src="https://dl.dropbox.com/u/10128325/GetData.js"></script>
-<script>init();</script>
+
+<button onclick="init()">Test Button</button>
+
 {% include 'footer.html' %}
 </html>
